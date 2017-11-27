@@ -12,4 +12,15 @@ function my_theme_enqueue_styles() {
     );
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
-?>
+
+// WOOCOMMERCE CUSTOMIZING
+
+// adjust columns on shop page
+
+// add_filter( 'loop_shop_columns', function() {
+//   return 2;
+// });
+
+// remove ratings from each product on shop page
+
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
